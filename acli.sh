@@ -10,7 +10,10 @@ export MYPROJECT_TOOLS="${PWD}/tools"
 arduino-cli core update-index
 mkdir -p ${ARDUINO_DIRECTORIES_DOWNLOADS}/packages
 mkdir -p ${ARDUINO_DIRECTORIES_DOWNLOADS}/libraries
-cp -R ~/Sync/ard_staging/* ${ARDUINO_DIRECTORIES_DOWNLOADS}
+if [ -d ~/Sync/ard_staging ]
+then
+    cp -R ~/Sync/ard_staging/* ${ARDUINO_DIRECTORIES_DOWNLOADS}
+fi
 arduino-cli core install adafruit:samd
 arduino-cli core install Seeeduino:samd
 arduino-cli core install adafruit:nrf52

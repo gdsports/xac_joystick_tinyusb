@@ -19,7 +19,10 @@ export PATH="${IDEDIR}:${PATH}"
 cd ${IDEDIR}
 which arduino
 # Install board package
-cp -R ~/Sync/ard_staging/* ${IDEDIR}/portable/staging/
+if [ -d ~/Sync/ard_staging ]
+then
+    cp -R ~/Sync/ard_staging/* ${IDEDIR}/portable/staging/
+fi
 arduino --pref "compiler.warning_level=default" --save-prefs
 arduino --pref "boardsmanager.additional.urls=https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json" --save-prefs
 arduino --install-boards "adafruit:samd"
