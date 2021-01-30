@@ -5,7 +5,6 @@ export ARDUINO_DIRECTORIES_DATA="${ARDDIR}/data"
 export ARDUINO_DIRECTORIES_DOWNLOADS="${ARDDIR}/downloads"
 export ARDUINO_DIRECTORIES_USER="${ARDDIR}/user"
 export MYPROJECT_EXAMPLES="${PWD}/examples"
-export MYPROJECT_SRC="${PWD}/src"
 export MYPROJECT_TOOLS="${PWD}/tools"
 arduino-cli core update-index
 mkdir -p ${ARDUINO_DIRECTORIES_DOWNLOADS}/packages
