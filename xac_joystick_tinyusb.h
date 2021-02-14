@@ -118,7 +118,8 @@ void TUJoystick::loop(void)
 
 void TUJoystick::end(void)
 {
-  memset(&_report, 0x00, sizeof(_report));
+  _report.buttons = 0;
+  _report.xAxis = _report.yAxis = 128;
   SendReport(&_report, sizeof(_report));
 }
 
